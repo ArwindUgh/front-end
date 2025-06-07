@@ -104,7 +104,7 @@ export default function DashProfile() {
     try {
       dispatch(updateStart());
       const res = await fetch(
-        `https://blog-site-api-tn0y.onrender.com/api/user/update/${currentUser._id}`,
+        `https://v-api-hd0j.onrender.com/${currentUser._id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -131,7 +131,7 @@ export default function DashProfile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `https://blog-site-api-tn0y.onrender.com/api/user/delete/${currentUser._id}`,
+        `https://v-api-hd0j.onrender.com/api/user/delete/${currentUser._id}`,
         {
           method: 'DELETE',
           credentials: 'include',
@@ -153,7 +153,7 @@ export default function DashProfile() {
       //const res = await fetch(
         //'https://blog-site-api-tn0y.onrender.com/api/user/signout',
         const res = await fetch(
-          'https://blog-site-api-tn0y.onrender.com/api/user/signout',
+          'https://v-api-hd0j.onrender.com/api/user/signout',
         {
           method: 'POST',
           credentials: 'include',

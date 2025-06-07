@@ -22,7 +22,7 @@ export default function CreatePost() {
 
   const navigate = useNavigate();
 
-  const BACKEND_URL = 'https://blog-site-api-tn0y.onrender.com';
+  const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
 
   const handleUpdloadImage = async () => {
     try {
