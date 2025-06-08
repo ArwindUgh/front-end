@@ -13,7 +13,7 @@ export default function CallToAction() {
         </p>
         <Button className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-white rounded-tl-xl rounded-bl-none hover:opacity-90">
   <a
-    href="https://www.youtube.com/@tellykhabri"
+    href="https://www.youtube.com/@tellybeatss"
     target="_blank"
     rel="noopener noreferrer"
   >

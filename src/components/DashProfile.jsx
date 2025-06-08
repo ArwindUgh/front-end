@@ -150,8 +150,6 @@ export default function DashProfile() {
 
   const handleSignout = async () => {
     try {
-      //const res = await fetch(
-        //'https://blog-site-api-tn0y.onrender.com/api/user/signout',
         const res = await fetch(
           'https://v-api-hd0j.onrender.com/api/user/signout',
         {
