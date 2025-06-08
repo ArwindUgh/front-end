@@ -24,28 +24,28 @@ import PropTypes from 'prop-types';
 
 const socialLinks = [
   {
-    href: 'https://x.com/KhabriTelly?t=cqSA72JWBH9sGfXpZefx6w&s=08',
+    href: 'https://x.com/TELLYBEATSS?t=ulYT3tJe6D3u6db9yFENig&s=09',
     label: 'X',
     icon: <SiX size={20} />,
     position: 'left',
     bg: 'bg-[#1B0033]',
   },
   {
-    href: 'https://www.instagram.com/tellykhabriofficial?igsh=MjJqbHphY3l0NWxo',
+    href: 'https://www.instagram.com/tellybeatss?igsh=MWYxaGl6Y3kwYm10ZQ==',
     label: 'Instagram',
     icon: <FaInstagram size={20} />,
     position: 'left',
     bg: 'bg-pink-600',
   },
   {
-    href: 'https://youtube.com/@tellykhabri?si=1HOeCB1VED0SVaLL',
+    href: 'http://www.youtube.com/@tellybeatss',
     label: 'YouTube',
     icon: <FaYoutube size={20} />,
     position: 'right',
     bg: 'bg-red-600',
   },
   {
-    href: 'https://www.facebook.com/share/18ykjgpQay/',
+    href: 'https://www.facebook.com/share/1CTzLbXmPa/',
     label: 'Facebook',
     icon: <FaFacebook size={20} />,
     position: 'right',

@@ -94,17 +94,17 @@ export default function FooterCom() {
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://www.facebook.com/profile.php?id=100083955443389"
+              href="https://www.facebook.com/share/1CTzLbXmPa/"
               icon={BsFacebook}
             />
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://www.instagram.com/extremebollywoodofficial"
+              href="https://www.instagram.com/tellybeatss?igsh=MWYxaGl6Y3kwYm10ZQ=="
               icon={BsInstagram}
             />
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://twitter.com/"
+              href="https://x.com/TELLYBEATSS?t=ulYT3tJe6D3u6db9yFENig&s=09"
               icon={BsTwitter}
             />
             <Footer.Icon
@@ -114,7 +114,7 @@ export default function FooterCom() {
             />
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://youtube.com/@tellykhabri?si=NlqHeFesSN4EW-6E"
+              href="http://www.youtube.com/@tellybeatss"
               icon={BsYoutube}
             />
           </div>

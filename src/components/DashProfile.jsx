@@ -104,7 +104,7 @@ export default function DashProfile() {
     try {
       dispatch(updateStart());
       const res = await fetch(
-        `https://v-api-hd0j.onrender.com/${currentUser._id}`,
+        `https://v-api-hd0j.onrender.com/api/user/update/${currentUser._id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
