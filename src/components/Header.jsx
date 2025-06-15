@@ -18,34 +18,45 @@ import { SiX } from 'react-icons/si';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 import { signoutSuccess } from '../redux/user/userSlice';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
+import React from 'react';
 import logo from './logo.jpg';
 import PropTypes from 'prop-types';
 
+const throttle = (func, delay) => {
+  let lastCall = 0;
+  return (...args) => {
+    const now = new Date().getTime();
+    if (now - lastCall < delay) return;
+    lastCall = now;
+    func(...args);
+  };
+};
+
 const socialLinks = [
   {
-    href: 'https://x.com/TELLYBEATSS?t=ulYT3tJe6D3u6db9yFENig&s=09',
+    href: 'https://x.com/ArvindUghrejiya?s=08',
     label: 'X',
     icon: <SiX size={20} />,
     position: 'left',
     bg: 'bg-[#1B0033]',
   },
   {
-    href: 'https://www.instagram.com/tellybeatss?igsh=MWYxaGl6Y3kwYm10ZQ==',
+    href: 'https://www.instagram.com/_television_show?igsh=MXRpamZyaGNscHdzbA==',
     label: 'Instagram',
     icon: <FaInstagram size={20} />,
     position: 'left',
     bg: 'bg-pink-600',
   },
   {
-    href: 'http://www.youtube.com/@tellybeatss',
+    href: 'https://youtube.com/@televisionshow25?si=MYgBqtYSo1MlBPKh',
     label: 'YouTube',
     icon: <FaYoutube size={20} />,
     position: 'right',
     bg: 'bg-red-600',
   },
   {
-    href: 'https://www.facebook.com/share/1CTzLbXmPa/',
+    href: 'https://www.facebook.com/share/16d9yKXMwU/',
     label: 'Facebook',
     icon: <FaFacebook size={20} />,
     position: 'right',
@@ -53,23 +64,23 @@ const socialLinks = [
   },
 ];
 
-const SocialButton = ({ href, icon, label, bg }) => (
+const SocialButton = React.memo(({ href, icon, label, bg }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="relative w-[45px] h-[45px] group my-1"
+    className="relative w-10 h-10 group my-1 sm:w-11 sm:h-11"
   >
     <div
       className={`absolute inset-0 rounded-full transition-transform duration-500 origin-left group-hover:-rotate-90 flex items-center justify-center ${bg} text-white`}
     >
       {icon}
     </div>
-    <div className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-white bg-orange-600 rounded-full opacity-0 group-hover:opacity-100 transition duration-500">
+    <div className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-white bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition duration-500">
       {label}
     </div>
   </a>
-);
+));
 
 SocialButton.propTypes = {
   href: PropTypes.string.isRequired,
@@ -91,6 +102,15 @@ export default function Header() {
 
   const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
 
+  const leftSocialLinks = useMemo(
+    () => socialLinks.filter((link) => link.position === 'left'),
+    []
+  );
+  const rightSocialLinks = useMemo(
+    () => socialLinks.filter((link) => link.position === 'right'),
+    []
+  );
+
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
@@ -100,12 +120,12 @@ export default function Header() {
   }, [location.search]);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const throttledScroll = throttle(() => {
       const offset = headerRef.current?.offsetHeight || 0;
       setIsSticky(window.scrollY > offset);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    }, 200);
+    window.addEventListener('scroll', throttledScroll);
+    return () => window.removeEventListener('scroll', throttledScroll);
   }, []);
 
   const handleSignout = async () => {
@@ -134,45 +154,42 @@ export default function Header() {
       {/* Top Header */}
       <div
         ref={headerRef}
-        className={`py-4 px-4 md:py-8 md:px-6 shadow-md relative transition-colors duration-500 ${
-          theme === 'dark' ? 'bg-black text-white' : 'bg-gradient-to-r from-[#0B0033] via-[#8A045C] to-[#FF0066]'
+        className={`py-4 px-3 sm:px-6 md:px-10 transition-colors duration-500 ${
+          theme === 'dark'
+            ? 'bg-black text-white'
+            : 'bg-gradient-to-r from-[#0B0033] via-[#8A045C] to-[#003366] text-white'
         }`}
       >
         {/* Social Icons - Left */}
         <div className="absolute left-2 top-1/2 transform -translate-y-1/2 hidden md:flex flex-col z-40">
-          {socialLinks
-            .filter((link) => link.position === 'left')
-            .map((link, i) => (
-              <SocialButton key={i} {...link} />
-            ))}
+          {leftSocialLinks.map((link, i) => (
+            <SocialButton key={i} {...link} />
+          ))}
         </div>
 
         {/* Social Icons - Right */}
         <div className="absolute right-2 top-1/2 transform -translate-y-1/2 hidden md:flex flex-col z-40">
-          {socialLinks
-            .filter((link) => link.position === 'right')
-            .map((link, i) => (
-              <SocialButton key={i} {...link} />
-            ))}
+          {rightSocialLinks.map((link, i) => (
+            <SocialButton key={i} {...link} />
+          ))}
         </div>
 
-        {/* Center Logo and Branding */}
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-center text-center sm:text-left gap-4">
+        {/* Branding Center */}
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center text-center gap-4 sm:gap-6 px-2">
           <img
             src={logo}
             alt="TellyBeatss Logo"
-            className="w-20 h-20 sm:w-28 sm:h-28 mx-auto sm:mx-0 rounded-full object-cover border-4 border-yellow-400 shadow-[0_0_10px_rgba(255,215,0,0.5)]"
+            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-yellow-400 shadow-md"
           />
           <div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold flex flex-wrap items-center gap-2">
-  <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-transparent bg-clip-text">
-    TELLY
-  </span>
-  <span className="text-white">BEATSS</span>
-</h1>
-
-            <p className="text-sm sm:text-md text-white dark:text-gray-400 font-medium">
-            From buzz to blockbuster – all your TV highlights in one place!
+            <h1 className="text-3xl sm:text-5xl font-extrabold flex flex-wrap items-center gap-2">
+              <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-[#003366] text-transparent bg-clip-text">
+                TELEVISION
+              </span>
+              <span className="text-white">SHOW</span>
+            </h1>
+            <p className="text-sm sm:text-base text-white dark:text-gray-400 font-medium">
+              From buzz to blockbuster – all your TV highlights in one place!
             </p>
           </div>
         </div>
@@ -188,7 +205,7 @@ export default function Header() {
           className={`shadow-md ${
             theme === 'dark'
               ? 'bg-[#1B0033] text-white'
-              : 'bg-gradient-to-r from-yellow-300 via-pink-500 to-purple-700 text-white'
+              : 'bg-gradient-to-r from-[#FFDD00] via-[#8A045C] to-[#D43F00] text-white'
           }`}
         >
           {/* Brand + Logo */}
@@ -197,8 +214,8 @@ export default function Header() {
             className="flex items-center self-center whitespace-nowrap text-sm sm:text-xl font-semibold text-white"
           >
             <img className="h-12 w-12 mr-2 rounded-full" src={logo} alt="logo" />
-            <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-700 rounded-lg text-white font-bold">
-              TELLYBEATSS
+            <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-[#003366] rounded-lg text-white font-bold">
+              TELEVISION SHOW
             </span>
             <span className="ml-2 hidden sm:inline text-yellow-200 font-semibold">
               .Com
@@ -222,7 +239,6 @@ export default function Header() {
 
           {/* Right Controls */}
           <div className="flex items-center gap-2 md:order-2">
-            {/* Mobile Search */}
             <Button
               className="w-10 h-10 lg:hidden"
               color="gray"
@@ -233,8 +249,6 @@ export default function Header() {
             >
               <AiOutlineSearch />
             </Button>
-
-            {/* Theme Switch */}
             <Button
               className="w-10 h-10"
               color="gray"
@@ -244,7 +258,6 @@ export default function Header() {
               {theme === 'light' ? <FaSun /> : <FaMoon />}
             </Button>
 
-            {/* Auth */}
             {currentUser ? (
               <Dropdown
                 arrowIcon={false}
@@ -259,9 +272,7 @@ export default function Header() {
                 }
               >
                 <Dropdown.Header>
-                  <span className="block text-sm">
-                    @{currentUser.username}
-                  </span>
+                  <span className="block text-sm">@{currentUser.username}</span>
                   <span className="block text-sm font-medium truncate">
                     {currentUser.email}
                   </span>
@@ -280,7 +291,6 @@ export default function Header() {
               </Link>
             )}
 
-            {/* Toggle */}
             <Navbar.Toggle />
           </div>
 
@@ -304,8 +314,8 @@ export default function Header() {
           </Navbar.Collapse>
         </Navbar>
 
-        {/* Mobile View: Social Icons */}
-        <div className="md:hidden flex justify-center gap-4 py-4 bg-yellow-100 dark:bg-gray-900">
+        {/* Mobile Social Icons */}
+        <div className="md:hidden flex flex-wrap justify-center gap-4 py-4 bg-yellow-100 dark:bg-gray-900">
           {socialLinks.map((link, i) => (
             <SocialButton key={i} {...link} />
           ))}

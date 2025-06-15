@@ -52,10 +52,10 @@ export default function SignIn() {
         {/* left */}
         <div className='flex-1 text-white'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-700 rounded-lg text-white mr-2'>
-          TELLYBEATSS
+            <span className='px-2 py-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-[#003366] rounded-lg text-white mr-2'>
+          TELEVISION
         </span>
-            Blog
+            SHOW
           </Link>
           <p className='text-sm mt-5'>
             Sing-in to enjoy the blogs about B-town

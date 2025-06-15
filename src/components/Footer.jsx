@@ -12,7 +12,7 @@ export default function FooterCom() {
   return (
     <Footer
       container
-      className="bg-gradient-to-tr from-[#1B0033] via-[#32004B] to-[#FF004D] text-white border-t-8 border-[#FFC107]"
+      className="bg-gradient-to-tr from-[#1B0033] via-[#32004B] to-[#D43F00] text-white border-t-8 border-[#FFC107]"
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid w-full justify-between sm:flex md:grid-cols-1">
@@ -21,10 +21,10 @@ export default function FooterCom() {
               to="/"
               className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold text-white"
             >
-              <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-700 rounded-lg text-black mr-2">
-                TELLY BEATSS
+              <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-[#003366] rounded-lg text-black mr-2">
+                TELEVISION
               </span>
-              Blog
+              SHOW
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6">
@@ -37,7 +37,7 @@ export default function FooterCom() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Blogs
+                  ARTICLES
                 </Footer.Link>
                 <Footer.Link
                   className="text-white hover:text-[#FFC107] transition"
@@ -45,7 +45,7 @@ export default function FooterCom() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  TELLY BEATSS Blog
+                  TELEVISION SHOW
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -54,7 +54,7 @@ export default function FooterCom() {
               <Footer.LinkGroup col>
                 <Footer.Link
                   className="text-white hover:text-[#FFC107] transition"
-                  href="https://www.instagram.com/extremebollywoodofficial"
+                  href="https://www.instagram.com/_television_show?igsh=MXRpamZyaGNscHdzbA=="
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -62,7 +62,7 @@ export default function FooterCom() {
                 </Footer.Link>
                 <Footer.Link
                   className="text-white hover:text-[#FFC107] transition"
-                  href="https://www.facebook.com/profile.php?id=100083955443389"
+                  href="https://www.facebook.com/share/16d9yKXMwU/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -87,24 +87,24 @@ export default function FooterCom() {
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
             href="#"
-            by="Telly Khabri"
+            by="Television show"
             year={new Date().getFullYear()}
             className="text-white"
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://www.facebook.com/share/1CTzLbXmPa/"
+              href="https://www.facebook.com/share/16d9yKXMwU/"
               icon={BsFacebook}
             />
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://www.instagram.com/tellybeatss?igsh=MWYxaGl6Y3kwYm10ZQ=="
+              href="https://www.instagram.com/_television_show?igsh=MXRpamZyaGNscHdzbA=="
               icon={BsInstagram}
             />
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="https://x.com/TELLYBEATSS?t=ulYT3tJe6D3u6db9yFENig&s=09"
+              href="https://x.com/ArvindUghrejiya?s=08"
               icon={BsTwitter}
             />
             <Footer.Icon
@@ -114,7 +114,7 @@ export default function FooterCom() {
             />
             <Footer.Icon
               className="hover:text-[#FFC107] transition"
-              href="http://www.youtube.com/@tellybeatss"
+              href="https://youtube.com/@televisionshow25?si=MYgBqtYSo1MlBPKh"
               icon={BsYoutube}
             />
           </div>

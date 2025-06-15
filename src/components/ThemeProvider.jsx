@@ -10,7 +10,7 @@ export default function ThemeProvider({ children }) {
         className={`min-h-screen transition-colors duration-300 ${
           theme === 'dark'
             ? 'bg-[#1B0033] text-white'
-            : 'bg-gradient-to-r from-[#0B0033] via-[#8A045C] to-[#FF0066]'
+            : 'bg-gradient-to-r from-[#0B0033] via-[#8A045C] to-[#003366]'
         }`}
       >
         {children}

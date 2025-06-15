@@ -6,12 +6,12 @@ export default function About() {
           <h1 className='text-3xl font font-semibold text-center my-7'>
             About 
 
-            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-[#003366] text-transparent bg-clip-text">
 
-               TELLYBEATSS</span> Blog
+               TELEVISION</span> SHOW
           </h1>
           <div className='text-md text-white flex flex-col gap-6 '>
-            <h2>Welcome to TELLTBEATSS Blog!</h2>
+            <h2>Welcome to TELEVISION SHOW!</h2>
              
             <p>
               What would life be without a dose of fun, entertainment and gossip! And wouldn’t it just get better if the gossip came straight from one of the most sought after industries in the country – Bollywood? With all its glam and sometimes the sham, it never seizes to surprise you, does it? Isn’t all this excitement the reason why you want to be amongst the first ones to know all about it? Well friends, we have everything that you need right here, right now. Yes, you heard it right.TALLY KHABRI is here to give you almost a first-hand peek on who is doing what and where in the B Town?
