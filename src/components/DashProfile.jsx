@@ -104,7 +104,7 @@ export default function DashProfile() {
     try {
       dispatch(updateStart());
       const res = await fetch(
-        `https://v-api-hd0j.onrender.com/api/user/update/${currentUser._id}`,
+        `https://back-end-ys5e.onrender.com/api/user/update/${currentUser._id}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -131,7 +131,7 @@ export default function DashProfile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `https://v-api-hd0j.onrender.com/api/user/delete/${currentUser._id}`,
+        `https://back-end-ys5e.onrender.com/api/user/delete/${currentUser._id}`,
         {
           method: 'DELETE',
           credentials: 'include',
@@ -151,7 +151,7 @@ export default function DashProfile() {
   const handleSignout = async () => {
     try {
         const res = await fetch(
-          'https://v-api-hd0j.onrender.com/api/user/signout',
+          'https://back-end-ys5e.onrender.com/api/user/signout',
         {
           method: 'POST',
           credentials: 'include',

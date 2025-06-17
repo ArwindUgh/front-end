@@ -100,7 +100,7 @@ export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null);
 
-  const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
+  const BACKEND_URL = 'https://back-end-ys5e.onrender.com';
 
   const leftSocialLinks = useMemo(
     () => socialLinks.filter((link) => link.position === 'left'),

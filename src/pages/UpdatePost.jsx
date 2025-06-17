@@ -14,7 +14,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
+const BACKEND_URL = 'https://back-end-ys5e.onrender.com';
 
 export default function UpdatePost() {
   const [file, setFile] = useState(null);

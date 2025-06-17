@@ -3,7 +3,7 @@ import CallToAction from '../components/CallToAction';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 
-const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
+const BACKEND_URL = 'https://back-end-ys5e.onrender.com';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);

@@ -5,7 +5,7 @@ import CallToAction from '../components/CallToAction';
 import CommentSection from '../components/CommentSection';
 import PostCard from '../components/PostCard';
 
-const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
+const BACKEND_URL = 'https://back-end-ys5e.onrender.com';
 
 export default function PostPage() {
   const { postSlug } = useParams();

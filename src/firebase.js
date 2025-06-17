@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCsz05A8wVdsufBi0bKKwVY1YYARwv-Ma4",
-  authDomain: "blog-site-504bf.firebaseapp.com",
-  projectId: "blog-site-504bf",
-  storageBucket: "blog-site-504bf.firebasestorage.app",
-  messagingSenderId: "95706505165",
-  appId: "1:95706505165:web:a032d283a83ded68372e84"
+  apiKey: "AIzaSyDmyPvtlKCpxzUDWBGPVky13LdxMQ5GNS0",
+  authDomain: "televisionshow-ddeef.firebaseapp.com",
+  projectId: "televisionshow-ddeef",
+  storageBucket: "televisionshow-ddeef.firebasestorage.app",
+  messagingSenderId: "258233904906",
+  appId: "1:258233904906:web:0551b24157b15c434d54f3"
 };
 
 // Initialize Firebase

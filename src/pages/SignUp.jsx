@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import OAuth from '../components/OAuth';
 
-const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
+const BACKEND_URL = 'https://back-end-ys5e.onrender.com';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});

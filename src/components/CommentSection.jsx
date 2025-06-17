@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 import Comment from './Comment';
 
-const BACKEND_URL = 'https://v-api-hd0j.onrender.com';
+const BACKEND_URL = 'https://back-end-ys5e.onrender.com';
 
 export default function CommentSection({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
