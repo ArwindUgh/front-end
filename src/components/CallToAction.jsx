@@ -1,5 +1,5 @@
 import { Button } from 'flowbite-react';
-import pic from './pic.png';
+import pic from './pic1.jpg';
 
 export default function CallToAction() {
   return (
